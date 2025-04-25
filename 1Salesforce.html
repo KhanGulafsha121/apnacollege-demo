@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gulafsha Salesforce</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <style>
+        /* Custom CSS for the dropdown menu */
+        .dropdown-menu {
+            width: 9cm; /* Adjust width as needed */
+            max-height: 600px; /* Adjust height as needed */
+            overflow-y: auto; /* Add scrollbar if content overflows */
+            position: absolute; /* Position the dropdown menu absolutely */
+            transform: translateX(-60%); /* Center the dropdown menu horizontally */
+            left: 60%; /* Align the dropdown menu to the center of the button */
+        }
+
+        /* Ensure the dropdown toggle button has relative positioning to allow the dropdown menu to be positioned absolutely */
+        .dropdown-toggle::after {
+            display: none; /* Remove the default dropdown arrow */
+        }
+
+        p.info {
+            text-align: center; /* Center the text */
+            font-size: 1rem; /* Adjust font size for phone number */
+            margin-top: 0px; /* Space between contact link and phone number */
+        }
+
+        .navbar-nav .nav-item {
+            margin-right: 1.5rem; /* Adjust spacing between items */
+        }
+
+        .navbar {
+            justify-content: center; /* Center all items */
+        }
+
+        .navbar-nav {
+            flex-grow: 2;
+            justify-content: center;
+        }
+
+        /* Custom style for the announcement container */
+        .announcement-container {
+            background-color: #022c55; /* Dark blue background */
+            color: white; /* White text */
+            padding: 10px 20px; /* Padding for the container */
+            text-align: center; /* Center the text */
+            margin-top: 6rem; /* Margin to prevent overlap with the fixed navbar */
+            height: 50px;
+        }
+
+        /* Hero section style */
+        .hero {
+            position: relative; /* Position relative for overlay positioning */
+            width: 100%;
+            max-width: 100%; /* Ensure it doesn't overflow */
+            height: auto;
+            text-align: left;
+        }
+
+        .hero img {
+            width: 100%; /* Full width image */
+            height: auto;
+        }
+
+        .hero-content {
+            position: absolute; /* Absolute positioning to overlay on the image */
+            top: 60%; /* Center vertically */
+            left: 5%; /* Slightly from the left edge */
+            transform: translateY(-50%); /* Adjust vertical alignment */
+            color: #022c55; /* Text color */
+            padding: 10px;
+        }
+
+        .hero-content h1 {
+            font-family: Calibri;
+            font-size: 3.5rem;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+        }
+        .hero-content button{
+            background-color: #0473db;
+            color: white;
+            /* border: none; */
+            height: 50px;
+            width: 200px;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease; 
+        }
+
+        /* Remove background color from button with ID 'xyz' */
+        #xyz {
+            background-color:white;
+            color: #0473db; 
+            border: 2px solid #0473db; /* Add a solid border */
+            border-radius: 4px; /* Optional: rounded corners */
+        }
+
+        /* Hover effect for both buttons */
+        .hero-content button:hover {
+            background-color: #022c55; /* Darker blue on hover */
+            color: rgb(254, 255, 255);
+        }
+        #xyz:hover {
+            background-color: #f3f4f6; /* Dark background on hover */
+            color: #022c55;/* Change text color to white on hover */
+            border-color: #022c55; /* Optional: match border color to background */
+        }
+        .middle-heading{
+            font-size: 2.7rem;
+            font-weight: bold;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: #022c55; /* Text color */
+            padding: 70px;
+            margin: 30px;
+            text-align: center;
+            letter-spacing: -1px;
+        }
+     .card {
+    height: 105%; /* Keep the height */
+    width: fit-content;
+    border-radius: 15px; /* Add this for curved corners */
+    margin: 0 20px; /* Reduce the space between cards */
+    box-shadow: 0px 4px 8px rgba(10, 10, 10, 0.5); /* Optional: Add a subtle shadow for a nice effect */
+   }
+  
+      .card img {
+    object-fit: cover; /* Keep image covering the card */
+    height: 190px; /* Keep the image height */
+    border-top-left-radius: 15px; /* Match the corner radius */
+    border-top-right-radius: 15px; /* Match the corner radius */
+   }
+
+      .container-fluid {
+    padding-left: 25px; /* Adjust padding on left */
+    padding-right: 25px; /* Adjust padding on right */
+   }
+   #lmn {
+    position: relative;
+    top: 60px; /* Adjust to move the button up/down */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    color: #0473db;
+    border: 2px solid #0473db;
+    border-radius: 4px;
+    padding: 5px;
+    height: 50px;
+    width: 240px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#lmn:hover {
+    background-color: #eff0f2;
+    color: #022c55;
+    border-color: #010a13;
+}
+        
+    .container-img {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center; /* Center the button */
+        margin-top: -5px; /* Move image up */
+    }
+
+    .container-img img {
+        width: 100%;
+       margin-bottom: -20px;   /*Adjust margin to move image upwards */
+        margin-top: -80px; /* Adjust this value to move the image upwards */
+    }
+    .Center-heading1{
+            font-size: 4rem;
+            font-weight: bold;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: #022c55; /* Text color */
+            padding: 70px;
+            margin: 10px;
+            text-align: center;
+            letter-spacing: -1px;
+            line-height: 100%;
+            margin-bottom: 0px; /* Remove bottom margin */
+            padding-bottom: 0px; /* Remove bottom padding */
+        }
+        .para-1{
+            font-size: 1.2rem;
+            padding: 0px;
+            margin: 0px;
+            text-align: center;
+            margin-top: 0px; /* Remove top margin */
+            padding-top: 0px; /* Remove top padding */
+          
+        }
+        .Center-heading2{
+            font-size: 3rem;
+            font-weight: bold;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: #022c55; /* Text color */
+            padding: 10px;
+            margin: 10px;
+            text-align: center;
+            letter-spacing: -1px;
+            line-height: 100%;
+        }
+        .para-2{
+            font-size: 1.2rem;
+            padding: 0px;
+            margin: 0px;
+            text-align: center;
+        }
+        #startTrial{
+            background-color: #0473db; /* Match hero button */
+    color: white; /* Text color */
+    height: 50px;
+    width: 200px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+#startTrial:hover{
+     background-color: #022c55; /* Darker blue on hover */
+    color: rgb(254, 255, 255);
+}
+#watchDemo {
+    background-color: #fafafb;
+    color: #0473db;
+    height: 50px;
+    width: 200px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+    border: 2px solid #0473db; /* Add a solid border */
+     border-radius: 4px; /* Optional: rounded corners */
+}
+
+#watchDemo:hover {
+    background-color: #f3f4f6; /* Dark background on hover */
+            color: #022c55;/* Change text color to white on hover */
+            border-color: #022c55; /* Optional: match border color to background */
+}
+.gul{
+  padding: 110px;
+  margin: 30px;
+  
+}
+/* Footer General Styling */
+footer {
+  background-color: white;
+  color: rgb(17, 0, 0);
+  padding: 40px 0;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-column {
+  flex: 1 1 18%;
+  margin: 10px 0;
+}
+
+.footer-column h4 {
+  margin-bottom: 20px;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.footer-column a {
+  display: block;
+  color: #022c55;
+  margin-bottom: 10px;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.footer-column a:hover {
+  color:  #022c55;
+}
+
+.footer-column p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* Icons */
+.footer-column i {
+  margin-right: 8px;
+  color: #f9a825;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-column {
+    flex: 1 1 100%;
+    margin: 20px 0;
+  }
+}
+.footer-legal {
+  border-top: 1px solid #444;
+  margin-top: 20px;
+  padding-top: 20px;
+  text-align: center;
+  background-color: #022c55;
+}
+
+.footer-legal a {
+  color: #f1f4f5; /* Blue color */
+  margin: 0 15px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-legal a:hover {
+  text-decoration: underline;
+  color:  #73b8fd;
+}
+
+.footer-legal p {
+  color: white;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+    </style>
+</head>
+<body>
+<!--................................................ Navbar section.............................................................. -->
+<div>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top p-1 m-1">
+        <div class="container-fluid d-flex justify-content-center align-items-center fixed-top bg-white">
+            <a href="#" class="navbar-brand ms-3"><img src="https://a.sfdcstatic.com/shared/images/c360-nav/salesforce-with-type-logo.svg" alt="Salesforce" style="width: 70px;"></a>
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarcollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarcollapse">
+                <div class="navbar-nav me-auto ms-auto d-flex justify-content-center align-items-center bg-white">
+                    <a href="#" class="nav-item nav-link text-dark"><b>Products</b></a>
+                    <a href="#" class="nav-item nav-link text-dark"><b>Industries</b></a>
+                    <a href="#" class="nav-item nav-link text-dark"><b>Customers</b></a>
+                    <a href="#" class="nav-item nav-link text-dark"><b>Learning</b></a>
+                    <a href="#" class="nav-item nav-link text-dark"><b>Support</b></a>
+                    <a href="#" class="nav-item nav-link text-dark"><b>Company</b></a>
+                    <a href="#" class="nav-item nav-link text-dark"><b>Salesforce+</b></a>
+                    <a href="#" class="nav-item nav-link text-dark"><u>CONTACT</u>
+                        <p class="info">123-456-7890</p></a>
+                    <i class="bi bi-search nav-link text-dark"></i>
+                    <i class="bi bi-globe2 nav-link text-dark"></i>
+                    <div class="nav-item dropdown" id="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown"><strong>Login</strong></a>
+                        <div class="dropdown-menu bg-white">
+                            <li class="dropdown-item mb-2"><strong>Login</strong></li>
+                            <li class="dropdown-item mb-2">Products</li>
+                            <a href="#" class="dropdown-item mb-2"><u>Salesforce</u> <i class="bi bi-cloud-fill"></i></a>
+                            <a href="#" class="dropdown-item mb-2"><u>Marketing Cloud</u></a>
+                            <hr>
+                            <li class="dropdown-item mb-2">Experiences</li>
+                            <a href="#" class="dropdown-item mb-2"><u>Trailblazer Account</u></a>
+                            <p class="dropdown-item mb-2">Access Trailhead, your Trailblazer profile, <br> community, learning, original series, <br>events, support, and more.</p>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-success  text-light me-4 ms-2" style="height: 50px; width: 140px;"><b>Try for free</b></button>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+<!--................................................ Blue container section.............................................................. -->
+<div class="announcement-container ">
+    <p><strong>JUST ANNOUNCED: See why Gartner® recognised Salesforce as a Leader in Customer Data Platforms.</strong>
+         <a href="#" class="text-white"><u>Read the report</u></a>.</p>
+</div>
+<!--................................................ Hero section with image and text .............................................................. -->
+
+    <img src="https://wp.salesforce.com/en-ap/wp-content/uploads/sites/14/2024/02/php-marquee-starter-lg-bg.jpg?resize=1536,480" class="img-fluid" alt="Salesforce">
+    <div class="hero-content">
+        <h1 class="fw-bold mb-4 display-4">Try Salesforce <br> Starter Suite for <br>free.</h1>
+        <p class="text-dark mb-5 fs-5">Unite marketing, sales, and service in a single app. Try <br>Salesforce Starter Suite today. There's nothing to install. <br>No credit card required.</p>
+        <button type="button" class="btn mb-5 ms-1 me-3" id="abc">Start free trial</button>
+        <button type="button" class="btn mb-5" id="xyz">Watch demo</button><br>
+    </div>
+</div>
+<div class="middle-heading m-4 mb-1">
+<p>Learn what Salesforce products can do for you.</p>
+</div>
+<!--............................................................ Cards Section-1 ............................................................-->
+<div class="m-3">
+    <div class="row m-3">
+        <div class="col">
+           <div class="card">
+            <img src="https://wp.salesforce.com/en-in/wp-content/uploads/sites/21/2023/03/pb-hp-product-smb_icon-1.jpg?resize=768,433" class="card-img-top" alt="chicken">
+            <div class="card-body text-left">
+                <h5 class="card-title">Small Business</h5>
+                <p class="card-text">
+                    Sales, service, and email <br>outreach tools in a single app..</p> <br>
+                    <a href="https://www.salesforce.com/in/products/salesforce-starter/?d=pc1-btn-smblearn" target="_blank" style="text-decoration: none;">Learn more</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col">
+            <div class="card">
+             <img src="https://wp.salesforce.com/en-in/wp-content/uploads/sites/21/2023/03/pb-hp-product-smb_icon-2.jpg?resize=768,433" class="card-img-top" alt="chicken">
+             <div class="card-body text-left">
+                 <h5 class="card-title">Sales Cloud</h5>
+                 <p class="card-text">
+                    Close more deals and speed <br>up growth with the #1 CRM..</p> <br>
+                     <a href="https://www.salesforce.com/in/products/sales/?d=pc2-btn-saleslearn" target="_blank " style="text-decoration: none;">Learn more</a>
+
+             </div>
+           </div>
+         </div>
+
+         <div class="col">
+            <div class="card">
+             <img src="https://wp.salesforce.com/en-in/wp-content/uploads/sites/21/2023/03/pb-hp-product-smb_icon-3.jpg?resize=768,433" class="card-img-top" alt="chicken">
+             <div class="card-body text-left">
+                 <h5 class="card-title">Service Cloud</h5>
+                 <p class="card-text">
+                    Make customers happy faster <br>and build loyalty with Service <br>Cloud..</p> <br>
+                     <a href="https://www.salesforce.com/in/products/service/?d=pc3-btn-servlearn"  target="_blank " style="text-decoration: none;">Learn more</a>
+
+             </div>
+           </div>
+         </div>
+
+         <div class="col">
+            <div class="card ">
+             <img src="https://wp.salesforce.com/en-in/wp-content/uploads/sites/21/2023/03/pb-hp-product-smb_icon-4.jpg?resize=768,433" class="card-img-top" alt="chicken">
+             <div class="card-body text-left">
+                 <h5 class="card-title">Marketing Cloud</h5>
+                 <p class="card-text">
+                    Build customer relationships <br>for life with data-first digital <br>marketing..</p> <br>
+                     <a href="https://www.salesforce.com/in/products/marketing-cloud/overview/?d=pc4-btn-mktglearn" target="_blank  " style="text-decoration: none;">Learn more</a>
+
+             </div>
+           </div>
+         </div>
+    </div>
+  </div>  
+  <!--........................................................... Image and button section....................................................... -->
+  <a href=""><a href="https://www.salesforce.com/in/products/" target="_blank" id="lmn" class="btn">
+    <b>View all our products</b></a>
+
+  <div class="container-img margin-top">
+            <img src="https://wp.salesforce.com/en-in/wp-content/uploads/sites/21/2023/03/pb-hp-products-bg.png?resize=1536,469">  </div>
+
+ <!--........................................................... Center heading section....................................................... -->
+ <div class="Center-heading1 fixed">
+    <p>We bring companies and customers <br> together</p>
+</div>
+<span class="para-1">
+    <p>
+        Salesforce is the world’s most trusted customer relationship management (CRM) <br>
+        platform. We help your marketing, sales, commerce, service, and IT teams work as one <br>
+        from anywhere — so you can keep your customers happy everywhere.
+    </p>
+</span>
+
+<!-- Buttons Container -->
+<div class="button-container text-center my-5">
+    <button type="button" class="btn" id="startTrial">Start Free Trial</button>
+    <button type="button" class="btn" id="watchDemo">Watch Demo</button>
+</div>
+
+<div class="Center-heading2">
+    <p>Learn valuable skills for free, with Trailhead</p>
+</div>
+<span class="para-2">
+    <p>
+        Follow guided learning paths and get hands-on to learn Salesforce, digital, and soft skills <br> from anywhere.
+    </p>
+</span>
+
+<!--............................................................Icon Cards Section-1 ............................................................-->
+<div id="Card-Icon"> 
+<div class="row m-3 p-3">
+        <div class="col">
+           <div class="card" style="height: 110%;">
+            <a href="https://trailhead.salesforce.com/content/learn/modules/trailhead_playground_management"><img src="https://res.cloudinary.com/hy4kyit2a/f_auto,fl_lossy,q_70/learn/modules/trailhead_playground_management/2f5d5c1bfd282031b928027dc61ae51e_badge.png" style="width: min-content; height: 100px;" class="card-img-top mx-auto d-block m-3" alt="Icon"> </a>
+            <div class="card-body text-left"> 
+                <h5 class="card-title" style="font-size: 1.5rem;">Trailhead Playground <br>Management</h5> <br>
+                <p class="card-text">
+                    Create hands-on orgs, practice your <br> Salesforce skills, and complete Trailhead <br> challenges.</p> <br>
+                    <a href="https://trailhead.salesforce.com/content/learn/modules/trailhead_playground_management" target="_blank">Start learning</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+            <div class="card"  style="height: 110%;">
+             <a href="https://trailhead.salesforce.com/content/learn/modules/apex_triggers"><img src="https://res.cloudinary.com/hy4kyit2a/f_auto,fl_lossy,q_70/learn/modules/apex_triggers/b27bd74e219ef8fec8d06bfe71409cb5_badge.png" style="width: min-content;  height: 100px;" class="card-img-top mx-auto d-block  m-3" alt="Icon"></a>
+             <div class="card-body text-left"> 
+                 <h5 class="card-title" style="font-size: 1.5rem;">Salesforce Platform Basics</h5> <br>
+                 <p class="card-text">
+                    Learn how to use customer relationship <br>management (CRM) software to grow your <br>business.</p> <br>
+                     <a href="https://trailhead.salesforce.com/content/learn/modules/starting_force_com" target="_blank ">Start learning</a>
+             </div>
+           </div>
+         </div>
+         <div class="col">
+            <div class="card" style="height: 110%;">
+             <a href="https://trailhead.salesforce.com/content/learn/modules/starting_force_com"><img src="https://res.cloudinary.com/hy4kyit2a/f_auto,fl_lossy,q_70/learn/modules/starting_force_com/d6c87e2bd754dddc3116963498852e3a_badge.png" style="width: min-content;  height: 100px; " class="card-img-top  mx-auto d-block m-3" alt="Icon"> </a>
+             <div class="card-body text-left">
+                 <h5 class="card-title" style="font-size: 1.5rem;">Apex Triggers</h5> <br>
+                 <p class="card-text">
+                    Grow your business, boost productivity, and <br>make smart decisions with Sales Cloud <br>business with Salesforce..</p> <br>
+                     <a href="https://trailhead.salesforce.com/content/learn/modules/apex_triggers"  target="_blank ">Start learning</a>
+             </div>
+           </div>
+         </div>
+        </div>  
+<!-- ..........................................................15000text section......................................... ....................-->
+ <!-- Buttons Container -->
+<div class="button-container text-center my-5 mb-5" style=" margin-bottom: -10px;">
+    <button type="button" class="btn" id="watchDemo"><a href="https://trailhead.salesforce.com/?_ga=2.235319621.593028980.1728754349-1717061894.1723483647" style="text-decoration: none;" target="_blank">Learn from free</a></button>
+</div>
+
+        <div class="Center-heading1 fixed mb-5" style="font-size: 2.8rem;">
+            <p>Over 150,000 companies, both big and <br> small, are growing their business with <br>Salesforce.</p>
+        </div>
+
+        <div class="button-container text-center my-5 m-4 P-4" style=" margin-bottom: -10px;">
+            <button type="button" class="btn" id="watchDemo"><a href="https://trailhead.salesforce.com/?_ga=2.235319621.593028980.1728754349-1717061894.1723483647" style="text-decoration: none;" target="_blank">View all Customer</a></button> </div>
+<!--.......................................................Icon Cards Section-1 ............................................................-->
+<div class="Short-Card"> 
+    <div class="row m-0 p-0">
+        <div class="col">
+            <div class="card" style="height: 120%; display: flex; align-items: center; justify-content: center;">
+                <a href="https://trailhead.salesforce.com/content/learn/modules/trailhead_playground_management">
+                    <img src="https://wp.sfdcdigital.com/en-in/wp-content/uploads/sites/21/2023/03/in-hp-min-logo-balaji.png?resize=300,108" 
+                    style="width: 150px; height: 50px;" class="card-img-top mx-auto d-block m-3" alt="Icon"> 
+                </a>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card" style="height: 120%; display: flex; align-items: center; justify-content: center;">
+                <a href="https://trailhead.salesforce.com/content/learn/modules/trailhead_playground_management">
+                    <img src="https://wp.sfdcdigital.com/en-in/wp-content/uploads/sites/21/2023/03/in-hp-min-logo-flame.png?resize=300,108" 
+                    style="width: 150px; height: 50px;" class="card-img-top mx-auto d-block m-3" alt="Icon"> 
+                </a>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card" style="height: 120%; display: flex; align-items: center; justify-content: center;">
+                <a href="https://trailhead.salesforce.com/content/learn/modules/trailhead_playground_management">
+                    <img src="https://wp.sfdcdigital.com/en-in/wp-content/uploads/sites/21/2023/03/in-hp-min-logo-genpact.png?resize=300,108" 
+                    style="width: 150px; height: 50px;" class="card-img-top mx-auto d-block m-3" alt="Icon"> 
+                </a>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card" style="height: 120%; display: flex; align-items: center; justify-content: center;">
+                <a href="https://trailhead.salesforce.com/content/learn/modules/trailhead_playground_management">
+                    <img src="https://wp.sfdcdigital.com/en-in/wp-content/uploads/sites/21/2023/03/in-hp-min-logo-godrejboyce.png?resize=300,108" 
+                    style="width: 150px; height: 50px;" class="card-img-top mx-auto d-block m-3" alt="Icon"> 
+                </a>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card" style="height: 120%; display: flex; align-items: center; justify-content: center;">
+                <a href="https://trailhead.salesforce.com/content/learn/modules/trailhead_playground_management">
+                    <img src="https://wp.sfdcdigital.com/en-in/wp-content/uploads/sites/21/2023/03/in-hp-min-logo-mahindra.png?resize=300,108" 
+                    style="width: 150px; height: 50px;" class="card-img-top mx-auto d-block m-3" alt="Icon"> 
+                </a>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card" style="height: 120%; display: flex; align-items: center; justify-content: center;">
+                <a href="https://trailhead.salesforce.com/content/learn/modules/trailhead_playground_management">
+                    <img src="https://wp.sfdcdigital.com/en-in/wp-content/uploads/sites/21/2023/03/in-hp-min-logo-pepe.png?resize=300,108" 
+                    style="width: 150px; height: 50px;" class="card-img-top mx-auto d-block m-3" alt="Icon"> 
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-img" style="margin-top: 110px;">
+    <img src="https://wp.sfdcdigital.com/en-in/wp-content/uploads/sites/21/2023/03/pb-hp-logos-bg-2.png?resize=1536,310">  </div>
+    <!-- .............................................................footer section .............................................................-->
+    <footer>
+        <div class="footer-container">
+          <!-- Column 1: Contact & Support -->
+          <div class="footer-column">
+            <h4><b>Contact & Support</b></h4>
+            <p><i class="fas fa-phone"></i> Call us at 1800-420-7332</p>
+            <a href="#feedback"><i class="fas fa-comments"></i> Give us your Feedback</a>
+            <a href="#new-to-salesforce">New to Salesforce?</a>
+          </div>
+      
+          <!-- Column 2: Product Information -->
+          <div class="footer-column">
+            <h4><b>New to Salesforce?</b></h4>
+            <a href="https://www.salesforce.com/in/products/salesforce-advantage/?d=70130000000YsaP">Why Salesforce</a>
+            <a href="https://www.salesforce.com/in/crm/what-is-crm/">What is CRM?</a>
+            <a href="https://www.salesforce.com/in/products/?d=70130000000YsaU">Explore All Products</a>
+            <a href="https://www.salesforce.com/in/saas/?d=70130000000YsaZ">SaaS</a>
+            <a href="https://www.salesforce.com/in/customer-success-stories/?d=70130000000Ysae">Customer Success</a>
+            <a href="https://www.salesforce.com/in/editions-pricing/sales-cloud/?d=70130000000Ysao">Product Pricing</a>
+          </div>
+      
+          <!-- Column 3: Company Information -->
+          <div class="footer-column">
+            <h4><b>About Salesforcen</b></h4>
+            <a href="https://www.salesforce.com/in/company/our-story/?d=70130000000YsbD">Our Story</a>
+            <a href="https://careers.salesforce.com/en/our-locations/asia-pacific/india/?d=70130000000YsbI">Careers</a>
+            <a href="https://www.salesforce.com/news/">Press</a>
+            <a href="https://www.salesforce.com/in/blog/?d=70130000000YsbS">Blog</a>
+            <a href="https://www.salesforce.com/in/crm/top-rated/?d=70130000000YsbX">Best CRM Software</a>
+            <a href="https://www.salesforce.com/company/sustainability/?d=70130000000i80J">Sustainability</a>
+            <a href="https://www.salesforce.com/in/company/feedback/?d=cta-glob-footer-9">Give us your Feedback</a>
+          </div>
+      
+          <!-- Column 4: Legal & Security -->
+          <div class="footer-column">
+            <h4><b>Legal & Security</b></h4>
+            <a href="https://trust.salesforce.com/trust/">Security and Performance</a>
+            <a href="https://www.salesforce.com/company/legal/">Legal</a>
+          </div>
+      
+          <!-- Column 5: Popular Links -->
+          <div class="footer-column">
+            <h4><b>Popular Links</b></h4>
+            <a href="file:///C:/Users/SABIR/Desktop/g/All%20File%20of%20HTML/1%20Salesforce%20web.html#new-release-features">New Release Features</a>
+            <a href="file:///C:/Users/SABIR/Desktop/g/All%20File%20of%20HTML/1%20Salesforce%20web.html#salesforce-mobile-app">Salesforce Mobile App</a>
+            <a href="file:///C:/Users/SABIR/Desktop/g/All%20File%20of%20HTML/1%20Salesforce%20web.html#business-app-store">Business App Store</a>
+            <a href="file:///C:/Users/SABIR/Desktop/g/All%20File%20of%20HTML/1%20Salesforce%20web.html#dreamforce">Dreamforce</a>
+            <a href="file:///C:/Users/SABIR/Desktop/g/All%20File%20of%20HTML/1%20Salesforce%20web.html#salesforce-plus">Salesforce Plus</a>
+            <a href="https://startups.salesforce.com/">Salesforce for Startups</a>
+          </div>
+        </div>
+      </footer>
+      
+      <div class="footer-legal">
+        <a href="https://www.salesforce.com/company/legal/sfdc-website-terms-of-service/">Terms of Service</a>
+        <a href="https://www.salesforce.com/company/privacy/">Privacy</a>
+        <a href="https://www.salesforce.com/company/disclosure/">Responsible Disclosure</a>
+        <a href="https://trust.salesforce.com/en/">Trust</a>
+        <a href="https://www.salesforce.com/in/company/contact-us/?d=70130000000EgLr">Contact</a>
+        <a href="file:///C:/Users/SABIR/Desktop/g/All%20File%20of%20HTML/1%20Salesforce%20web.html#cookie-preferences">Cookie Preferences</a>
+        <a href="file:///C:/Users/SABIR/Desktop/g/All%20File%20of%20HTML/1%20Salesforce%20web.html#privacy-choices">Your Privacy Choices</a>
+        <p>© Copyright 2024 Salesforce, Inc. All rights reserved. Various trademarks held by their respective owners.</p>
+      </div>
+      
+<!-- .............................................................jquery section .............................................................-->
+<script>
+    $(document).ready(function() {
+        $('#dropdown').on('mouseenter', function() {
+            $(this).find('.dropdown-menu').addClass('show');
+        });
+
+        $('#dropdown').on('mouseleave', function() {
+            $(this).find('.dropdown-menu').removeClass('show');
+        });
+    });
+</script>
+</body>
+</html>
