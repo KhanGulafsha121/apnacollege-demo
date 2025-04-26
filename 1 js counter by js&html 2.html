@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Centering the content of the page */
+        body {
+            display: flex;
+            justify-content: center;  /* Center horizontally */
+            align-items: center;      /* Center vertically */
+            height: 100vh;           /* Full viewport height */
+            margin: 0;                /* Remove default margin */
+            background-color: #f0f0f0; /* Optional: Add background color */
+            margin-top: -10%;
+        }
+
+        #countLabel {
+            font-size: 10em; /* Fix: Using font-size, corrected and adjusted size */
+            display: block;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #btnContainer {
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1.5em;
+            color: rgb(15, 14, 15);
+            background-color: rgb(84, 10, 221);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.25s; /* Fix: Corrected transition time */
+            box-shadow: 0 4px 6px rgba(168, 168, 190, 0.11), 0px 1px 3px rgba(0, 0, 0, 0.08);
+        }
+
+        button:hover {
+            background-color: blueviolet;
+        }
+    </style>
+    <script>
+        function Increament() {
+            var countLabel = document.getElementById("countLabel");
+            var count = parseInt(countLabel.textContent);
+            countLabel.textContent = ++count;
+        }
+
+        function Decreament() {
+            var countLabel = document.getElementById("countLabel");
+            var count = parseInt(countLabel.textContent);
+            countLabel.textContent = --count;
+        }
+
+        function Reset() {
+            document.getElementById("countLabel").textContent = "0";
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <label id="countLabel">0</label>
+        <div id="btnContainer">
+            <button onclick="Increament()" class="button">Increament</button>
+            <button onclick="Decreament()" class="button">Decreament</button>
+            <button onclick="Reset()" class="button">Reset</button>
+        </div>
+    </div>
+</body>
+</html>
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* Add comments to explain the purpose of each style */
+    #countLabel {
+        font-size: 10em;
+        display: block;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    #btnContainer {
+        text-align: center;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 1.5em;
+        color: rgb(15, 14, 15);
+        background-color: rgb(84, 10, 221);
+        border-radius: 50px;
+        cursor: pointer;
+        transition: background-color 0.25s;
+        box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0px 1px 3px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Add a hover state for the buttons */
+    button:hover {
+        background-color: rgb(120, 13, 221);
+    }
+</style>
+<body>
+    <label id="countLabel">0</label>
+    <div id="btnContainer">
+        <button class="increase-button" type="button">Increament</button>
+        <button class="decrease-button" type="button">Decreament</button>
+        <button class="reset-button" type="button">Reset</button>
+    </div>
+
+    <script>
+        // Add comments to explain the purpose of each function
+        function increaseCount() {
+            var countLabel = document.getElementById("countLabel");
+            var count = parseInt(countLabel.textContent);
+
+            // Add error handling for invalid content
+            if (isNaN(count)) {
+                count = 0;
+            }
+
+            countLabel.textContent = ++count;
+        }
+
+        function decreaseCount() {
+            var countLabel = document.getElementById("countLabel");
+            var count = parseInt(countLabel.textContent);
+
+            // Add error handling for invalid content
+            if (isNaN(count)) {
+                count = 0;
+            }
+
+            countLabel.textContent = --count;
+        }
+
+        function resetCount() {
+            document.getElementById("countLabel").textContent = "0";
+        }
+
+        // Use event listeners for better code organization and readability
+        document.querySelector('.increase-button').addEventListener('click', increaseCount);
+        document.querySelector('.decrease-button').addEventListener('click', decreaseCount);
+        document.querySelector('.reset-button').addEventListener('click', resetCount);
+    </script>
+</body>
+</html> -->
