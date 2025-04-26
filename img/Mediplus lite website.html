@@ -1,0 +1,1705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mediplus lite website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+
+/* Topbar */
+.topbar {
+  background-color:transparent;
+  padding: 8px 0;
+  font-size: 1rem;
+  color: #333;
+  border-bottom: 1px solid #ccc;
+}
+
+.topbar ul {
+  display: flex;
+  gap:25px;
+  list-style: none;
+  padding-left: 80px;
+  margin: 5px;
+}
+
+.top-link li a {
+  color: black;
+  transition: color 0.3s ease;
+}
+
+.top-link li a:hover {
+  color: #0056b3;
+}
+
+.top-contact {
+  text-align: right;
+}
+
+.top-contact li {
+  display: inline;
+  margin-left: 40px;/* to give space between contact info and logo*/
+  color:black;;
+}
+.top-contact i {
+  color: #00bcd4; /* Light blue */
+  margin-right: 10px;
+}
+/* Remove underline from all anchor tags */
+a {
+  text-decoration: none;
+}
+
+/* Optional: You can add hover effect */
+a:hover {
+  text-decoration: none; /* still no underline */
+}
+header {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 60px;
+  width: 100%;
+  background: white;
+}
+.heading ul {
+  display: flex;
+}
+.logo a {
+  color: black;
+  transition-duration: 1s;
+  font-weight: 800;
+}
+.logo a:hover {
+  color: rgb(240, 197, 6);
+  transition-duration: 1s;
+}
+.heading ul li {
+  list-style: none;
+}
+.heading ul li a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  font-size: 16px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+.heading ul li a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: #007bff; /* Blue underline */
+  left: 0;
+  bottom: -5px;
+  transition: width 0.4s;
+}
+
+.heading ul li a:hover::after {
+  width: 100%;
+}
+
+.heading ul li a::before {
+  content: "";
+  height: 2px;
+  width: 0px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: white;
+  transition-duration: 1s;
+}
+
+#input {
+  height: 30px;
+  width: 300px;
+  text-decoration: none;
+  border: 0px;
+  padding: 5px;
+}
+.logo a {
+  color: rgb(12, 12, 12);
+  font-size: 35px;
+  font-weight: 500;
+  text-decoration: none;
+}
+.slider-section {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slider-wrapper {
+            display: flex;
+            /* Adjusted for proper alignment */
+            transition: transform 1s ease;
+            position: relative; /* Position relative for absolute children */
+        }
+
+        .slide {
+            min-width: 100%; /* Ensures each slide takes full width */
+            position: relative; /* Position for absolute children */
+        }
+
+        .slider-content {
+          position: absolute; /* Fixed position on the slider */
+            left: 20px; /* Adjust as per your layout */
+            top: 35%; /* Center vertically */
+            transform: translateY(-50%); /* Center align adjustment */
+            color:black;
+            z-index: 10; /* Ensures content is above images */
+            padding: 20px; /* Padding for better look */
+            border-radius: 5px; /* Rounded corners for content box */
+            padding: 100px;
+            margin: 0px;
+        }
+
+        /* Animation for auto-slide */
+        @keyframes slide {
+            from { transform: translateX(0); }
+            to { transform: translateX(-100%); }
+        }
+        .slider-content h1 {
+            font-weight: bold;
+            font-size: 2.5rem;
+        }
+        .slider-content p {
+            margin: 30px 0;
+        }
+.buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.btn-custom {
+  background-color: #4288f1;
+  color: white;
+  border: none;
+  padding: 20px 30px;
+  border-radius: 6px;
+  transition: 0.3s;
+  font-weight: bold;
+  margin: 10px 15px;
+}
+
+.btn-custom:hover {
+  background-color: #00090a;
+  color: white;
+}
+
+/* Animation for auto-slide */
+@keyframes slide {
+  0%, 20% { transform: translateX(0%); }
+  25%, 45% { transform: translateX(-100%); }
+  50%, 70% { transform: translateX(-200%); }
+  75%, 100% { transform: translateX(0%); }
+}
+.card {
+    border: none; /* Remove default border */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for smooth effect */
+}
+
+.card:hover {
+    transform: scale(1.03); /* Scale card on hover */
+    box-shadow: 10px 4px 20px rgba(20, 20, 20, 0.2); /* Add shadow for depth effect */
+}
+.center{
+  display: flex; /* Enable Flexbox */
+  flex-direction: column; /* Stack children vertically */
+  justify-content: flex-start; /* Center vertically */
+  align-items: center; /* Center horizontally */ /* Full viewport height */
+  text-align: center; /* Center text */
+  padding-top: 100px;
+}
+.center h2{
+  font-size: 2.5rem;
+}
+.circle-icon {
+  background-color: white;
+  border: 1px solid #125cfa;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  color: #125cfa;
+  transition: all 0.4s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.circle-icon:hover {
+  background-color: #125cfa;
+  color: white;
+  transform: scale(1.2);
+}
+
+.dotted-line {
+  border-top: 3px dotted #2a6ebd;
+  width: 80px;
+}
+.stats-section {
+    position: relative;
+    background-color: #2563eb; /* blue-600 */
+    color: white;
+    padding: 3rem 1rem;
+    overflow: hidden;
+  }
+
+  .stats-section img.bg-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.3;
+    z-index: 0;
+  }
+
+  .stats-container {
+    position: relative;
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    text-align: center;
+    align-items: center;
+    z-index: 1;
+  }
+
+  @media (min-width: 640px) {
+    .stats-container {
+      grid-template-columns: repeat(4, 1fr);
+      padding: 0 1.5rem;
+    }
+  }
+
+  .stat-item {
+    z-index: 1;
+  }
+
+  .stat-icon {
+    border: 1px solid white;
+    border-radius: 9999px;
+    width: 50px;
+    height: 48px;
+    margin: 0 auto 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+.stat-icon:hover {
+  color: #3b82f6; /* Tailwind's blue-500 or custom blue */
+  background-color: #f7f7f7;
+}
+  .stat-value {
+    font-weight: bold;
+    font-size: 1.25rem;
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.900rem;
+  }
+
+  .get-pro-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: #1d4ed8; /* blue-700 */
+    color: white;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 0.25rem;
+    border: none;
+    cursor: pointer;
+    z-index: 2;
+    transition: background-color 0.3s ease;
+  }
+
+  .get-pro-btn:hover {
+    background-color: #1e40af; /* blue-800 */
+  }
+  .top {
+  text-align:left;
+}
+
+.top li {
+  display: inline;
+  color:black;;
+}
+.top i {
+  color: #00bcd4; /* Light blue */
+  margin-right: 10px;
+}
+.hero {
+      position: relative;
+      height: 320px;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.7);
+      opacity: 0.9;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      opacity: 0.5; background-color: #2563eb; 
+    }
+
+    .hero-content {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 1rem;
+      color: white;
+    }
+
+    .hero-content h1 {
+      font-size: 1.3rem;
+      font-weight: bold;
+      max-width: 600px;
+    }
+
+    @media (min-width: 640px) {
+      .hero-content h1 {
+        font-size: 1.7rem;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+    }
+
+    .hero-content p {
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      max-width: 500px;
+    }
+
+    .button-group {
+      margin-top: 1.5rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn {
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .btn-primary {
+      background-color: white;
+      color: #2563eb;
+      font-weight: 500;
+      border: none;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: white;
+      font-weight: bold;
+      border: 1px solid white;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .scroll-top {
+      position: fixed;
+      bottom: 1rem;
+      right: 1rem;
+      background-color: #007bff;
+      color: white;
+      padding: 0.5rem;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .scroll-top i {
+      font-size: 1rem;
+    }
+    .gallery {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.image-box {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-box img {
+  width: 100%;
+  height: 14rem;
+  object-fit: cover;
+}
+
+/* Blue overlay */
+.image-box::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 110%;
+  width: 100%;
+  background: rgba(0, 102, 204, 0.4);
+  opacity: 0;
+  transition: 0.3s ease;
+  z-index: 1;
+}
+
+/* Button styling and perfect center */
+.view-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 20px;
+  background: white;
+  color: #0056b3;
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  z-index: 2;
+}
+
+/* Show button and overlay on hover */
+.image-box:hover::after {
+  opacity: 1;
+}
+
+.image-box:hover .view-btn {
+  opacity: 2;
+  pointer-events: auto;
+}
+
+/* Hover effect on button itself */
+.view-btn:hover {
+  background: black;
+  color: white;
+}
+.services-section {
+  padding: 60px 40px;
+  background-color: #fff;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 40px;
+}
+
+.service-box {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  transition: 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.service-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 20px rgba(0, 102, 204, 0.1);
+}
+
+.service-icon {
+  font-size: 50px;
+  color: #0066cc;
+  margin-bottom: 3px;
+}
+.pricing-card {
+  background-color: #f7f7f7;
+        box-shadow: 0 2px 12px rgba(20, 20, 20, 0.05);
+        box-sizing: 3px solid black;
+        padding: 40px;
+        text-align: center;
+        width: 300px;
+        margin: 10px;
+        flex-shrink: 0;
+      }
+
+      .icon-box {
+        font-size: 60px;
+        color: #2563eb;
+        margin-bottom: 20px;
+      }
+
+      .pricing-card h3 {
+        font-size: 20px;
+        color: #111827;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      .price {
+        font-size: 30px;
+        font-family: 'Times New Roman', Times, serif;
+        color: #2563eb;
+        font-weight: 800;
+        margin-bottom: 20px;
+      }
+
+      .price span {
+        font-size: 14px;
+        color: #9ca3af;
+        font-weight: normal;
+      }
+
+      .features {
+        list-style: none;
+        padding: 0;
+        width: 100%;
+        margin-bottom: 20px;
+      }
+
+      .features li {
+        display: flex;
+        justify-content: space-between;
+        color: #4b5563;
+        font-size: 14px;
+        padding: 8px 0;
+      }
+
+      .features li i.fa-times-circle {
+        color: #9ca3af;
+      }
+
+      .features li i.fa-check-circle {
+        color: #2563eb;
+      }
+
+      .pricing-card button {
+        width: 100%;
+        background-color: #2563eb;
+        color: white;
+        font-weight: 600;
+        padding: 12px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .pricing-card button:hover {
+        background-color: black;
+        color: white;
+      }
+  .cardcontain {
+    display: flex;
+    gap: 40px;
+    width: fit-content;
+    max-width: 100%;
+    margin: 30px auto; /* Added some top/bottom margin for better spacing */
+  }
+  .card-container {
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 0px;
+    width: 350px;
+    height: 470px;
+    display: flex; /* Enable flex layout for items inside the card */
+    flex-direction: column; /* Stack items vertically */
+  }
+
+  .card-image {
+    width: 100%; /* Make the image fill the card width */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 15px; /* Add some space below the image */
+    display: block; /* Prevent extra space below inline images */
+  }
+  .btn-date {
+    padding-left: 100px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 5px;
+  transition: 0.3s;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.btn-date:hover {
+  background-color: #00090a;
+  color: white;
+}
+
+
+  .card-container h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #333;
+    font-weight: 500;
+    padding-left: 10px;
+  }
+  .card-container h3:hover{
+    color: #2563eb;
+  }
+  .card-container p {
+    padding-left: 10px;
+    color: gray;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 15px; /* Add some space above the button */
+    flex-grow: 1; /* Allow the paragraph to take up remaining vertical space */
+  }
+  /* this is to bring underline just below the cord */
+  .card-container {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-container::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background-color: #2563eb; /* Blue underline */
+  transition: width 0.3s ease;
+}
+
+.card-container:hover::after {
+  width: 100%;
+}
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 10px 4px 20px rgba(20, 20, 20, 0.2);
+}
+ /* this is to bring underline just below the cord */
+ /* that blue image code */
+ .clients-section {
+  position: relative;
+  width: 100%;
+  height: 240px; /* Adjust as needed */
+  overflow: hidden;
+}
+
+.clients-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: url('client-bg.jpg') center center / cover no-repeat;
+  opacity: 3; /* Blue tint handled below */
+  z-index: 1;
+}
+
+/* Optional: Add a blue overlay */
+.clients-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #2563eb; /* Tailwind's blue-600 */
+  opacity: 0.7;
+  z-index: 2;
+}
+
+.clients-logos {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0rem 1rem;
+  z-index: 3;
+}
+
+.clients-logos img {
+  height: 80px;
+  width: 150px;
+  object-fit: contain;
+  background: transparent;
+}
+
+ .gulcontainer {
+      max-width: 87.5rem;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      margin-top: 3rem;
+      margin-bottom: 5rem;
+    }
+  
+    @media (min-width: 640px) {
+      .container {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+      }
+    }
+  
+    @media (min-width: 1024px) {
+      .container {
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+    }
+  
+    .form-image-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+  
+    @media (min-width: 1024px) {
+      .form-image-wrapper {
+        flex-direction: row;
+      }
+    }
+  
+    .appointment-form {
+      width: 110%;
+    }
+  
+    @media (min-width: 1024px) {
+      .appointment-form {
+        width: 45%;
+        padding: 25px;
+        margin-left: 70px;
+      }
+    }
+  
+    .appointment-form > div + div {
+      margin-top: 1rem;
+    }
+  
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+      gap: 1rem;
+    }
+  
+    @media (min-width: 600px) {
+      .form-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+  
+    .form-input,
+    .form-select {
+      border-width: 1px;
+      border-style: solid;
+      border-color: #e5e7eb;
+      border-radius: 0.25rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+      padding: 12px 18px;
+    }
+  
+    .form-input::placeholder,
+    .form-select::placeholder {
+      color: #9ca3af;
+    }
+    
+    .form-textarea {
+      border-width: 1px;
+      border-style: solid;
+      border-color: #e5e7eb;
+      border-radius: 0.25rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      font-size: 0.995rem;
+      line-height: 1.25rem;
+      resize: none;
+      width: 100%;
+      padding: 30px 18px;
+    }
+  
+    .form-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+  
+    .submit-button {
+      background-color: #2563eb;
+      color: #fff;
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+      font-weight: 600;
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
+      padding-top: 0.5rem;
+      padding-bottom: 1rem;
+      border-radius: 0.25rem;
+    }
+  
+    .confirmation-text {
+      color: #6b7280;
+      font-size: 0.75rem;
+      line-height: 1rem;
+    }
+  
+    .image-container {
+      width: 80%;
+      display: flex;
+      justify-content: left;
+      position: relative;
+    }
+  
+    @media (min-width: 1000px) {
+      .image-container {
+        width: 60%;
+      }
+    }
+  
+    .contact-image {
+      max-width: 80%;
+      height: auto;
+      object-fit: contain;
+    }
+    /* CSS */
+.partner-section {
+  background-color: #007bff; /* Blue background */
+  padding: 40px 0;
+}
+
+.partner-logos {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.partner-logos img {
+  max-height: 60px;
+  filter: brightness(0) invert(1); /* White image effect */
+  transition: transform 0.3s ease;
+}
+
+.partner-logos img:hover {
+  transform: scale(1.1); /* Zoom effect on hover */
+}
+/* Newsletter Section */
+.newsletter-section {
+    background: #cce2fc;
+    padding: 60px 0 50px 0;
+}
+.newsletter-container {
+  max-width: 1050px;
+    margin: 10px 110px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2px;
+    position: relative;
+    height: 150px;
+}
+.newsletter-text h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: black
+}
+.newsletter-text p {
+    margin: 0;
+    color: #666;
+    font-size: 1rem;
+}
+.newsletter-form {
+    display: flex;
+    gap: 1px;
+}
+
+.newsletter-form input[type="email"] {
+    padding: 12px 18px;
+    border-radius: 6px;
+    border: none;
+    font-size: 1rem;
+    width: 300px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    padding-left: 30px;
+}
+
+.btn-primary {
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 1rem;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.btn-primary:hover{
+  background-color: black;
+}
+.footer {
+  height: 400px;
+    background: #1976d2;
+    color: #fff;
+    font-weight: 400;
+    padding: 40px 0 20px 0;
+    border-radius: 0 0 10px 10px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    justify-content: space-between;
+}
+
+.footer-col {
+    flex: 1 1 220px;
+    min-width: 220px;
+    margin-bottom: 20px;
+}
+
+.footer-col h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.footer-underline {
+    width: 50px;
+    height: 3px;
+    background: #fff;
+    border-radius: 2px;
+    margin-bottom: 16px;
+}
+
+.footer-col p {
+    font-size: 0.98rem;
+    color: #e3e3e3;
+    margin-bottom: 14px;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    columns: 2;
+}
+
+.footer-col ul li {
+    margin-bottom: 7px;
+}
+
+.footer-col ul li a {
+    color: #e3e3e3;
+    text-decoration: none;
+    font-size: 0.98rem;
+    transition: color 0.2s;
+}
+
+.footer-col ul li a:hover {
+    color: #fff;
+}
+
+.footer-social {
+    margin-top: 12px;
+}
+
+.footer-social a {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-right: 12px;
+    display: inline-block;
+    transition: color 0.2s;
+}
+
+.footer-social a:hover {
+    color:black;
+}
+
+.footer-newsletter {
+    display: flex;
+    margin-top: 8px;
+}
+
+.footer-newsletter input[type="email"] {
+    padding: 10px 14px;
+    border-radius: 6px 0 0 6px;
+    border: 2px solid #e5e7eb;
+    font-size: 1rem;
+    width: 170px;
+    background:transparent;
+    color: white;
+}
+
+.footer-newsletter button {
+    background: white;
+    color: #2196f3;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 0 6px 6px 0;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background 0.2s;
+}
+
+.footer-newsletter button:hover {
+    color: black;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .newsletter-container, .footer-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+    }
+    .btn-secondary {
+        position: static;
+        transform: none;
+        margin-top: 16px;
+    }
+}
+.lastline {
+  text-align: center;
+  padding: 50px; /* Add some padding for better spacing */
+}
+
+.lastline p {
+  margin: 0; /* Remove default paragraph margins */
+  font-weight: 400px;
+}
+
+.lastline a {
+  color: inherit; /* Use the parent's text color */
+  text-decoration: underline;
+  text-decoration-color: white; /* Set underline color to white */
+}
+
+    </style>
+</head>
+<body>
+    <div class="topbar">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-5 col-12">
+                    <!-- Contact -->
+                    <ul class="top-link">
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Doctors</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                    <!-- End Contact -->
+                </div>
+                <div class="col-lg-6 col-md-7 col-12">
+                    <!-- Top Contact -->
+                    <ul class="top-contact">
+                        <li><i class="fa fa-phone"></i>+880 1234 56789</li>
+                        <li><i class="fa fa-envelope"></i><a href="mailto:support@yourmail.com" style="color: black;">support@yourmail.com</a></li>
+                    </ul>
+                    <!-- End Top Contact -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <header>
+        <div class="logo d-flex align-items-center">
+            <img src="favicon.png" alt="medical logo" style="width: 35px; margin-right: 8px;" />
+            <a href="file:///E:/Gulafsha%20Folder/All%20File%20of%20HTML/mediplus-lite/index.html">
+                <span style="color: #007bff;">Medi</span><span style="color: black;">plus</span>
+            </a>
+        </div>
+        <div class="heading">
+            <ul>
+                <li><a href="#" class="under">Home</a></li>
+                <li><a href="#" class="under">Doctor</a></li>
+                <li><a href="#" class="under">Service</a></li>
+                <li><a href="#" class="under">Pages</a></li>
+                <li><a href="#" class="under">Blogs</a></li>
+                <li><a href="#" class="under">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="search">
+            <button class="btn btn-custom">Book Appointment</button>
+        </div>
+    </header>      
+    <section class="slider-section">
+      <div class="slider-wrapper">
+          <!-- Slide 1 -->
+          <div class="slide">
+              <img src="slider3.jpg" alt="Slide 1" style="width: 100%; height: 95%;">
+              <div class="slider-content">
+                  <h1>We provide <span style="color: #007bff;">Medical</span> services <br>that you can <span style="color: #007bff;">Trust!</span></h1>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>Voluptatum facilis repudiandae veritatis harum labore aperiam.</p>
+                  <div class="buttons">
+                      <button class="btn btn-custom">Get Appointment</button>
+                      <button class="btn btn-custom">Contact Now</button>
+                  </div>
+              </div>
+          </div>
+          
+          <!-- Slide 2 -->
+          <div class="slide">
+              <img src="slider2.jpg" alt="Slide 2" style="width: 100%; height: 95%;">
+              <div class="slider-content">
+                <h1>We provide <span style="color: #007bff;">Medical</span> services <br>that you can <span style="color: #007bff;">Trust!</span></h1>    
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>Voluptatum facilis repudiandae veritatis harum labore aperiam.</p>
+                  <div class="buttons">
+                      <button class="btn btn-custom">Meet Team</button>
+                      <button class="btn btn-custom">Learn More</button>
+                  </div>
+              </div>
+          </div>
+      
+          <!-- Slide 3 -->
+          <div class="slide">
+              <img src="slider.jpg" alt="Slide 3" style="width: 100%; height:95%;">
+              <div class="slider-content">
+                <h1>We provide <span style="color: #007bff;">Medical</span> services <br>that you can <span style="color: #007bff;">Trust!</span></h1>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>Voluptatum facilis repudiandae veritatis harum labore aperiam.</p>
+                  <div class="buttons">
+                      <button class="btn btn-custom">Book Now</button>
+                      <button class="btn btn-custom">Our Services</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  <section class="container mt-4">
+    <div style="position: absolute; z-index: 20; top: 95%; left: 10%; width: 80%;padding: 10px;">
+    <div class="row">
+        <!-- Card 1 -->
+        <div class="col-md-4">
+            <div class="card text-white bg-primary mb-4">
+                <div class="card-body">
+                    <h6 class="card-title">Lorem Amet</h6>
+                    <h3 style="margin-bottom: 30px;">Emergency Cases</h3>
+                    <p class="card-text">Lorem ipsum sit amet consectetur adipiscing elit. Vivamus et erat in lacus convallis sodales..</p>
+                    <a href="#" style="color: white; font-weight: bold;">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="col-md-4">
+            <div class="card text-white bg-primary mb-4">
+                <div class="card-body">
+                  <h6 class="card-title">Fusce Porttitor</h6>
+                  <h3 style="margin-bottom: 30px;">Doctors Timetable</h3>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" style="color: white; font-weight: bold;">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="col-md-4">
+            <div class="card text-white bg-primary mb-4">
+                <div class="card-body">
+                  <h6 class="card-title">Donec luctus</h6>
+                  <h3 style="margin-bottom: 30px;">Opening Hours</h3>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" style="color: white; font-weight: bold;">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+<div class="center content">
+  <h2 style="font-weight: bold;">We Are Always Ready to Help You &  <br>Your Family</h2>
+  <img src="section-img.png" alt="">
+  <p>Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. <br> pretiumts</p>
+</div>
+<section class="container py-5">
+  <div class="row text-center justify-content-center">
+    <!-- Emergency Help -->
+    <div class="col-md-4 mb-4">
+      <div class="circle-icon mx-auto mb-3"><i class="fas fa-ambulance"></i></div>
+      <div class="dotted-line mx-auto mb-3"></div>
+      <h3>Emergency Help</h3>
+      <p style="color: gray;">Lorem ipsum sit, consectetur adipiscing <br>elit. Maecenas mi quam vulputate.</p>
+    </div>
+    <!-- Enriched Pharmacy -->
+    <div class="col-md-4 mb-4">
+      <div class="circle-icon mx-auto mb-3"><i class="fas fa-clinic-medical"></i></div>
+      <div class="dotted-line mx-auto mb-3"></div>
+      <h3>Enriched Pharmacy</h3>
+      <p style="color: gray;">Lorem ipsum sit, consectetur adipiscing <br>elit. Maecenas mi quam vulputate.</p>
+    </div>
+    <!-- Medical Treatment -->
+    <div class="col-md-4 mb-4">
+      <div class="circle-icon mx-auto mb-3"><i class="fas fa-stethoscope"></i></div>
+      <div class="dotted-line mx-auto mb-3"></div>
+      <h3>Medical Treatment</h3>
+      <p style="color: gray;">Lorem ipsum sit, consectetur adipiscing <br>elit. Maecenas mi quam vulputate.</p>
+    </div>
+  </div>
+</section>
+<!-- Stats Section -->
+<section class="stats-section">
+  <img src="blockqoute-bg.jpg" alt="Background image of hands holding each other with blue overlay" aria-hidden="true" class="bg-image" />
+  
+  <div class="stats-container">
+    <div class="stat-item">
+      <div class="stat-icon">
+        <i class="fas fa-home"></i>
+      </div>
+      <p class="stat-value">3468</p>
+      <p class="stat-label">Hospital Rooms</p>
+    </div>
+    <div class="stat-item">
+      <div class="stat-icon">
+        <i class="fas fa-user"></i>
+      </div>
+      <p class="stat-value">557</p>
+      <p class="stat-label">Specialist Doctors</p>
+    </div>
+    <div class="stat-item">
+      <div class="stat-icon">
+        <i class="fas fa-smile"></i>
+      </div>
+      <p class="stat-value">4379</p>
+      <p class="stat-label">Happy Patients</p>
+    </div>
+    <div class="stat-item">
+      <div class="stat-icon">
+        <i class="fas fa-th"></i>
+      </div>
+      <p class="stat-value">32</p>
+      <p class="stat-label">Years of Experience</p>
+    </div>
+  </div>
+
+  <button class="get-pro-btn" type="button">Get Pro</button>
+</section> <!-- Your existing other content here -->
+ <div class="center content">
+  <h2 style="font-weight: bold;">We Are Always Ready to Help You &  <br>Your Family</h2>
+  <img src="section-img.png" alt="">
+  <p style="color:gray;">Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. <br> pretiumts</p>
+</div>
+<!-- ................who are we.............. -->
+<div class="max-w-7xl mx-auto px-5 py-6 md:py-10">
+  <div class="flex flex-col md:flex-row md:items-center md:space-x-12">
+   <div class="md:w-1/2">
+    <h2 class="text-gray-900 font-semibold text-xl md:text-2xl mb-3">
+     Who We Are
+    </h2>
+    <div class="w-12 h-[2px] bg-blue-600 mb-6">
+    </div>
+    <p class="mb-6 text-sm md:text-base leading-relaxed">
+     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pharetra antege vel est lobortis, a commodo magna rhoncus. In quis nisi non emet quam pharetra commodo.
+    </p>
+    <p class="mb-8 text-sm md:text-base leading-relaxed">
+     Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+    </p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-3 text-sm md:text-base">
+     <ul class="space-y-3">
+      <li class="flex items-center space-x-3 text-gray-700">
+       <i class="fas fa-play-circle text-blue-600">
+       </i>
+       <span>
+        Maecenas vitae luctus nibh.
+       </span>
+      </li>
+      <li class="flex items-center space-x-3 text-gray-700">
+       <i class="fas fa-play-circle text-blue-600">
+       </i>
+       <span>
+        Duis massa massa.
+       </span>
+      </li>
+      <li class="flex items-center space-x-3 text-gray-700">
+       <i class="fas fa-play-circle text-blue-600">
+       </i>
+       <span>
+        Aliquam feugiat interdum.
+       </span>
+      </li>
+     </ul>
+     <ul class="space-y-3">
+      <li class="flex items-center space-x-3 text-gray-700">
+       <i class="fas fa-play-circle text-blue-600">
+       </i>
+       <span>
+        Maecenas vitae luctus nibh.
+       </span>
+      </li>
+      <li class="flex items-center space-x-3 text-gray-700">
+       <i class="fas fa-play-circle text-blue-600">
+       </i>
+       <span>
+        Duis massa massa.
+       </span>
+      </li>
+      <li class="flex items-center space-x-3 text-gray-700">
+       <i class="fas fa-play-circle text-blue-600">
+       </i>
+       <span>
+        Aliquam feugiat interdum.
+       </span>
+      </li>
+     </ul>
+    </div>
+   </div>
+   <!-- <div class="w-full md:w-[900px] mx-auto mt-10 md:mt-0 relative flex justify-center"> -->
+   <div class="md:w-1/2 md:h-1/2 mt-10 md:mt-0 relative flex justify-center">
+    <img alt="..." class="rounded w-full h-auto md:w-[900px] md:h-[567px]" src="video-bg.jpg"/>
+    <div aria-hidden="true" class="absolute inset-0 flex items-center justify-center pointer-events-none">
+     <div class="w-28 h-28 rounded-full bg-white bg-opacity-70 flex items-center justify-center">
+      <div class="w-14 h-14 rounded-full bg-blue-600 flex items-center justify-center cursor-pointer">
+       <i class="fas fa-play text-white text-lg"></i>
+      </div> </div></div> </div></div></div>
+<!-- .................................Do you need Emergency Medical........................... -->
+      <main class="hero">
+        <img src="call-bg.jpg" alt="Medical CT scan machine and doctor">
+        <div class="hero-content">
+          <h1>Do you need Emergency Medical Care? Call @ 1234 56789</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque porttitor dictum turpis nec gravida.</p>
+          <div class="button-group">
+            <button class="btn btn-primary">Contact Now</button>
+            <button class="btn btn-outline">
+              <span>Learn More</span>
+              <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </main>
+      <!--..........................................................  --> 
+      <div class="center content">
+        <h2 style="font-weight: bold;">We Maintain Cleanliness Rules Inside <br> Our Hospital</h2>
+        <img src="section-img.png" alt="">
+        <p style="color:gray;">Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. <br> pretiumts</p>
+      </div>
+      <div class="gallery">
+        <div class="image-box">
+          <img src="pf1.jpg" alt="Smiling female patient sitting in clinic with female doctor in background" />
+          <button class="view-btn">View Details</button>
+        </div>
+        <div class="image-box">
+          <img src="pf2.jpg" alt="Female doctor with glasses talking to elderly female patient in hospital bed" />
+          <button class="view-btn">View Details</button>
+        </div>
+        <div class="image-box">
+          <img src="pf3.jpg" alt="Male doctor checking female patient lying inside MRI scanner" />
+          <button class="view-btn">View Details</button>
+        </div>
+        <div class="image-box">
+          <img src="pf4.jpg" alt="Male doctor and two female medical staff reviewing tablet in hospital corridor" />
+          <button class="view-btn">View Details</button>
+        </div>
+      </div>
+
+      <div class="center content">
+        <h2 style="font-weight: bold;">We Offer Different Services To <br>Improve Your Health</h2><br>
+        <img src="section-img.png" alt=""><br>
+        <p style="color:gray;">Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. <br> pretiumts</p>
+      </div>
+<!-- .....................................services secrion .............................-->
+      <section class="services-section">
+        <div class="container">
+          <div class="services-grid">
+            <div class="service-box">
+              <i class="fas fa-clipboard-list service-icon"></i>
+              <h4>General Treatment</h4>
+              <p style="color:gray;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut imperdiet.</p>
+            </div>
+      
+            <div class="service-box">
+              <i class="fas fa-tooth service-icon"></i>
+              <h4>Teeth Whitening</h4>
+              <p style="color:gray;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut imperdiet.</p>
+            </div>
+      
+            <div class="service-box">
+              <i class="fas fa-heart service-icon"></i>
+              <h4>Heart Surgery</h4>
+              <p style="color:gray;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut imperdiet.</p>
+            </div>
+      
+            <div class="service-box">
+              <i class="fas fa-ear-listen service-icon"></i>
+              <h4>Ear Treatment</h4>
+              <p style="color:gray;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut imperdiet.</p>
+            </div>
+      
+            <div class="service-box">
+              <i class="fas fa-eye service-icon"></i>
+              <h4>Vision Problems</h4>
+              <p style="color:gray;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut imperdiet.</p>
+            </div>
+      
+            <div class="service-box">
+              <i class="fas fa-prescription-bottle service-icon"></i>
+              <h4>Blood Transfusion</h4>
+              <p style="color:gray;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut imperdiet.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+  
+      <div class="center content" style="background-color: #faf8f8;">
+        <h2 style="font-weight: bold;">We Provide You The Best Treatment <br>In Resonable Price</h2><br>
+        <img src="section-img.png" alt=""><br>
+        <p style="color:gray;">Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. <br> pretiumts</p>
+      <!--...................................... plastic surgery.................................... -->
+      <div class="container mx-auto px-4 py-12">
+        <div class="flex justify-center gap-6 flex-wrap">
+          <!-- Card 1 -->
+          <div class="pricing-card" style="background-color:white">
+            <div class="icon-box">
+              <i class="fas fa-scissors"></i> </div>
+            <h3>Plastic Surgery</h3>
+            <p class="price">   $199 <span>/ Per Visit</span> </p>
+            <ul class="features">
+              <li><span>Lorem Ipsum Dolor Sit</span><i class="fas fa-check-circle"></i></li>
+              <li><span>Cubitur Sollicitudin Fentum</span><i class="fas fa-check-circle"></i></li>
+              <li><span>Nullam Interdum Enim</span><i class="fas fa-times-circle"></i></li>
+              <li><span>Donec Ultricies Metus</span><i class="fas fa-times-circle"></i></li>
+              <li><span>Pellentesque Eget Nibh</span><i class="fas fa-times-circle"></i></li>
+            </ul>
+            <button>Book Now</button>
+          </div>
+  
+          <!-- Card 2 -->
+          <div class="pricing-card" style="background-color:white">
+            <div class="icon-box"><i class="fas fa-tooth"></i> </div>
+            <h3>Teeth Whitening</h3>
+            <p class="price">  $299 <span>/ Per Visit</span></p>
+            <ul class="features">
+              <li><span>Lorem Ipsum Dolor Sit</span><i class="fas fa-check-circle"></i></li>
+              <li><span>Cubitur Sollicitudin Fentum</span><i class="fas fa-check-circle"></i></li>
+              <li><span>Nullam Interdum Enim</span><i class="fas fa-check-circle"></i></li>
+              <li><span>Donec Ultricies Metus</span><i class="fas fa-times-circle"></i></li>
+              <li><span>Pellentesque Eget Nibh</span><i class="fas fa-times-circle"></i></li> </ul>
+            <button>Book Now</button>
+          </div>
+          <!-- Card 3 -->
+          <div class="pricing-card" style="background-color:white">
+            <div class="icon-box">  <i class="fas fa-heart-broken"></i></div>
+            <h3>Heart Surgery</h3>
+            <p class="price">  $399 <span>/ Per Visit</span></p>
+            <ul class="features">
+              <li><span>Lorem Ipsum Dolor Sit</span><i class="fas fa-check-circle"></i></li>
+              <li><span>Cubitur Sollicitudin Fentum</span><i class="fas fa-check-circle"></i></li>
+              <li><span>Nullam Interdum Enim</span><i class="fas fa-check-circle"></i></li>
+              <li><span>Donec Ultricies Metus</span><i class="fas fa-check-circle"></i></li>
+              <li><span>Pellentesque Eget Nibh</span><i class="fas fa-check-circle"></i></li>
+            </ul>
+            <button>Book Now</button></div></div></div></div>
+    <div class="center content">
+      <h2 style="font-weight: bold;">Keep up with Our Most Recent <br>Medical News.</h2><br>
+      <img src="section-img.png" alt=""><br>
+      <p style="color:gray;">Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. <br> pretiumts</p>
+      </div>
+    <!-- ..................................3CARDS SECTIONS.................................... -->
+ <div class="cardcontain centered-cards">
+  <div class="card-container">
+    <img src="blog1.jpg" alt="Placeholder" class="card-image">
+    <div style="padding-left: 15px; margin-bottom: 10px;">
+      <button class="btn btn-date">22 Aug, 2020</button></div>    
+    <h3>We have announced our new <br>product.</h3>
+    <p>Lorem Ipsum Dolor A Sit Amet, Consectetur Adipisicing Elit, Sed Do Eiusmod Tempor Incididunt Sed Do Incididunt Sed.</p>
+
+  </div>
+  <div class="card-container">
+    <img src="blog2.jpg" alt="Placeholder" class="card-image">
+    <div style="padding-left: 15px; margin-bottom: 10px;">
+      <button class="btn btn-date">22 Aug, 2020</button></div> 
+    <h3>Top five way for solving teeth brproblems.</h3>
+    <p>Lorem Ipsum Dolor A Sit Amet, Consectetur Adipisicing Elit, Sed Do Eiusmod Tempor Incididunt Sed Do Incididunt Sed.</p>
+
+  </div>
+  <div class="card-container">
+    <img src="blog3.jpg" alt="Placeholder" class="card-image">
+    <div style="padding-left: 15px; margin-bottom: 10px;">
+      <button class="btn btn-date">22 Aug, 2020</button></div> 
+    <h3>We provide highly business sollutions.</h3>
+    <p>Lorem Ipsum Dolor A Sit Amet, Consectetur Adipisicing Elit, Sed Do Eiusmod Tempor Incididunt Sed Do Incididunt Sed.</p> 
+  </div>
+</div>
+<!-- .....................Blue Banner Section ...................................-->
+<section class="clients-section">
+  <div class="clients-bg"></div>
+  <div class="clients-logos">
+    <img alt="Central Hospital logo white" src="client1.png" />
+    <img alt="Panacea Clinic logo white" src="client2.png" />
+    <img alt="Cardiac Science logo white" src="client3.png" />
+    <img alt="Pharmacy logo white" src="client4.png" />
+    <img alt="Central Hospital logo white" src="client5.png" />
+  </div>
+</section>
+
+ <!-- Text content below -->
+ <div class="center content">
+  <h2 style="font-weight: bold;">We Are Always Ready to Help You. <br>Book An Appointment</h2><br>
+  <img src="section-img.png" alt=""><br>
+  <p style="color:gray;">Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. <br> pretiumts</p>
+  </div>
+
+ <!-- ......................form Section......................................... -->
+ <main class="gulcontainer">
+  <div class="form-image-wrapper">
+    <form action="#" class="appointment-form" method="POST">
+      <div class="form-grid">
+        <input class="form-input" name="name" placeholder="Name" type="text"/>
+        <input class="form-input" name="email" placeholder="Email" type="email"/>
+        <input class="form-input" name="phone" placeholder="Phone" type="tel"/>
+        <select class="form-select" name="department">
+          <option disabled="" selected="">  Department</option>
+          <option>  Cardiology</option>
+          <option>  Neurology</option>
+          <option>  Orthopedics</option> </select>
+        <select class="form-select" name="doctor">
+          <option disabled="" selected="">   Doctor </option>
+          <option> Dr. Smith </option>
+          <option>   Dr. Johnson </option>
+          <option>  Dr. Lee /option>
+        </select><input class="form-input" name="date" type="date"/></div><br>
+      <textarea class="form-textarea" name="message" placeholder="Write Your Message Here....." rows="5"></textarea>
+      <div class="form-actions">
+        <button class="submit-button" type="submit">  Book An Appointment</button>
+        <span class="confirmation-text">
+          ( We will be confirm by an Text Message )  </span></div>
+    </form>
+    <div class="image-container">
+      <img alt="Smiling male doctor in white coat with stethoscope and female nurse in blue scrubs standing side by side with arms crossed" class="contact-image" height="400" src="contact-img.png" width="600"/>
+    </div>
+  </div>
+</main>
+
+ <!-- ................................Newsletter Signup Section................................ -->
+ <section class="newsletter-section">
+  <div class="newsletter-container">
+      <div class="newsletter-text">
+          <h3>Sign up for newsletter</h3>
+          <p>Cu qui soleat partiendo urbanitas. Eum aperiri indoctum eu, <br>homero alterum.</p>
+      </div>
+      <div class="newsletter-form">
+          <input type="email" placeholder="Your email address"></div>
+          <div><button class="btn-primary">Subscribe</button></div>
+</section>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+          <div class="footer-col">
+              <h3>About Us</h3>
+              <div class="footer-underline"></div>
+              <p>Lorem ipsum dolor sit am consectetur adipisicing elit do eiusmod tempor incididunt ut labore dolore magna.</p>
+              <div class="footer-social">
+                  <a href="#"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                  <a href="#"><i class="fab fa-vimeo-v"></i></a>
+                  <a href="#"><i class="fab fa-pinterest-p"></i></a>
+              </div>
+          </div>
+          <div class="footer-col">
+              <h3>Quick Links</h3>
+              <div class="footer-underline"></div>
+              <ul>
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">Services</a></li>
+                  <li><a href="#">Our Cases</a></li>
+                  <li><a href="#">Other Links</a></li>
+                  <li><a href="#">Consulting</a></li>
+                  <li><a href="#">Finance</a></li>
+                  <li><a href="#">Testimonials</a></li>
+                  <li><a href="#">FAQ</a></li>
+                  <li><a href="#">Contact Us</a></li>
+              </ul>
+          </div>
+          <div class="footer-col">
+              <h3>Open Hours</h3>
+              <div class="footer-underline"></div>
+              <p>Lorem ipsum dolor sit ame consectetur adipisicing elit do eiusmod tempor incididunt.</p>
+              <ul style="font-size: small">
+                  <li>Monday - Friday: <br><span>8.00-20.00</span></li>
+                  <li>Saturday: <br><span>9.00-18.30</span></li>
+                  <li>Monday - Thursday: <span>9.00-15.00</span></li>
+              </ul>
+          </div>
+          <div class="footer-col">
+              <h3>Newsletter</h3>
+              <div class="footer-underline"></div>
+              <p>Subscribe to our newsletter to get all our news in your inbox. Lorem ipsum dolor sit amet, consectetur adipisicing elit,</p>
+              <div class="footer-newsletter">
+                  <input type="email" placeholder="Email Address">
+                  <button><i class="fa fa-paper-plane"></i></button> </div> </div></div>
+      <div class="lastline">
+        <p>© Copyright 2018 | All Rights Reserved by <a href="#">wpthemesgrid.com</a></p>
+      </div>
+  </footer>
+
+  <script>
+         $(document).ready(function() {
+            let currentIndex = 0;
+            const slides = $('.slide');
+            const totalSlides = slides.length;
+
+            function showNextSlide() {
+                currentIndex = (currentIndex + 1) % totalSlides;
+                $('.slider-wrapper').css('transform', `translateX(-${currentIndex * 100}%)`);
+            }
+            setInterval(showNextSlide, 3000); // Change slide every 3 seconds
+        });
+    </script>
+</body>
+</html> 

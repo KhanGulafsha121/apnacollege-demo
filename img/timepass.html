@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarVilla Service Cards</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+       .card-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px;
+    margin: 10px;
+    gap: 20px;
+}
+
+.service-card {
+    background-color: #fff;
+    border: 1px solid #ccc; /* Changed from black to light gray */
+    padding: 30px;
+    text-align: center;
+    width: 300px;
+    height: 350px;
+    transition: all 0.3s ease; /* Smooth transition on hover */
+}
+
+.service-card:hover {
+    background-color: #1e72f0;
+    color: white;
+    border: 1px solid #ccc; /* Keep gray border on hover */
+}
+
+.service-card:hover .icon,
+.service-card:hover h3,
+.service-card:hover p {
+    color: white;
+}
+
+.service-card .icon {
+    margin-bottom: 25px;
+    color: #555;
+    padding: 20px;
+    transition: color 0.3s ease;
+}
+
+.service-card h3 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+    
+}
+
+.service-card p {
+    color: #9e9d9d;
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+    font-family: sans-serif;
+}
+
+.service-card .underline {
+    background-color: #007bff;
+    height: 3px;
+    width: 50px;
+    margin: 0 auto;
+    border-radius: 2px;
+}
+.service-card:hover .underline {
+    background-color: white;
+}
+    </style>
+</head>
+<body>
+    <div class="card-container">
+        <div class="service-card">
+            <div class="icon">
+                <i class="fas fa-car fa-3x"></i>
+            </div>
+            <h3>Largest Dealership of Car</h3>
+            <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut den fugit sed quia.</p>
+            <div class="underline"></div>
+        </div>
+        <div class="service-card">
+            <div class="icon">
+                <i class="fas fa-wrench fa-3x"></i>
+            </div>
+            <h3>Unlimited Repair Warrenty</h3>
+            <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut den fugit sed quia.</p>
+            <div class="underline"></div>
+        </div>
+        <div class="service-card">
+            <div class="icon">
+                <i class="fas fa-file-invoice fa-3x"></i>
+            </div>
+            <h3>Insurence Support</h3>
+            <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut den fugit sed quia.</p>
+            <div class="underline"></div>
+        </div>
+    </div>
+</body>
+</html>
